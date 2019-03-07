@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="corner_radius_medium">10dp</dimen>
+    <dimen name="corner_radius_big">30dp</dimen>
+    <dimen name="top_recipe_height">250dp</dimen>
+    <dimen name="recipe_item_height">225dp</dimen>
+    <dimen name="magenta_nav_height">119.5dp</dimen>
+
+
+    <dimen name="font_normal">16sp</dimen>
+    <dimen name="font_title">26sp</dimen>
+
+    <dimen name="space_tiny">4dp</dimen>
+    <dimen name="space_small">8dp</dimen>
+    <dimen name="space_normal">16dp</dimen>
+    <dimen name="space_medium">24dp</dimen>
+    <dimen name="space_large">32dp</dimen>
+    <dimen name="space_xlarge">48dp</dimen>
+    <dimen name="space_huge">64dp</dimen>
+
+    <dimen name="margin_small">@dimen/space_small</dimen>
+    <dimen name="margin_normal">@dimen/space_normal</dimen>
+
+    <dimen name="toolbar_elevation">8dp</dimen>
+    <dimen name="icon_size">56dp</dimen>
+    <dimen name="toolbar_icon_size">@dimen/space_medium</dimen>
+    <dimen name="card_elevation">5dp</dimen>
+    <dimen name="item_elevation">2dp</dimen>
+    <dimen name="card_radius">7dp</dimen>
+    <dimen name="toolbar_details_height">156dp</dimen>
+    <dimen name="serial_vertical_margin">10dp</dimen>
+    <dimen name="page_space">8dp</dimen>
+    <dimen name="display">17sp</dimen>
+
+</resources>

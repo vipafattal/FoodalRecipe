@@ -1,0 +1,53 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorSecondary">@color/colorPrimaryDark</item>
+        <item name="android:textColorSecondary">#D50000</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+
+    <style name="Title">
+        <item name="android:textSize">@dimen/font_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="DetailsTitle" parent="Base.TextAppearance.AppCompat.Title">
+        <item name="android:textSize">@dimen/font_normal</item>
+    </style>
+
+    <style name="DetailsBold" parent="Base.TextAppearance.AppCompat.Body1">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DetailsBold.Large">
+        <item name="android:textSize">@dimen/font_normal</item>
+    </style>
+
+    <style name="Secondary" parent="Theme.MaterialComponents.Light"/>
+
+    <style name="Secondary.Negative">
+        <item name="colorSecondary">#ff4d6a</item>
+    </style>
+
+    <style name="Secondary.Positive">
+        <item name="colorSecondary">@color/colorAccent</item>
+    </style>
+
+    <style name="Widget.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+
+    <style name="MyEditText">
+        <item name="colorControlNormal">#000000</item>
+
+    </style>
+</resources>

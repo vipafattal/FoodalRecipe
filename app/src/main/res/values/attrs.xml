@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MagentaNav">
+        <attr name="menuRes" format="integer" />
+        <attr name="navColor" format="color" />
+        <attr name="defaultColorState" format="color" />
+
+        <attr name="accentDefault" format="color"/>
+        <attr name="accentActiveColor" format="color"/>
+
+        <attr name="navRadius" format="dimension"/>
+        <attr name="navElevation" format="dimension"/>
+        <attr name="onClickItemElevation" format="dimension" />
+
+        <attr name="text_size" format="dimension" />
+        <attr name="marginBetweenItems" format="dimension" />
+        <attr name="textSingleLine" format="boolean"/>
+        <attr name="boldFont" format="boolean"/>
+
+        <attr name="itemHeight" format="dimension"/>
+        <attr name="itemWidth" format="dimension"/>
+        <attr name="scaleImg" format="float"/>
+
+        <attr name="default_position" format="integer" />
+    </declare-styleable>
+</resources>

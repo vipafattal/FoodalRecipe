@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        app:behavior_peekHeight="48dp"
+        android:paddingBottom="15dp"
+        app:cardElevation="@dimen/card_elevation"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+        android:id="@+id/bottom_sheet_search"
+        android:background="@drawable/corners"
+        android:layout_height="wrap_content"
+        tools:context=".ui.SearchFragment"
+        android:orientation="vertical"
+        android:layout_width="match_parent">
+
+    <LinearLayout
+            android:paddingBottom="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <View
+                android:background="@android:color/darker_gray"
+                android:layout_width="match_parent"
+                android:layout_height=".85dp"
+        />
+        <LinearLayout
+                android:padding="@dimen/page_space"
+                android:id="@+id/peek_view_bottom_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/search_title_text"
+                    android:layout_gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Search"/>
+
+            <Space
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"/>
+
+                <View
+                        android:id="@+id/state_icon"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"/>
+
+
+        </LinearLayout>
+
+        <View
+                android:background="@android:color/darker_gray"
+                android:layout_width="match_parent"
+                android:layout_height=".6dp"/>
+
+        <LinearLayout
+                android:padding="@dimen/page_space"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+            <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:text="Sort By" android:layout_marginRight="15dp"/>
+
+            <com.google.android.material.chip.ChipGroup
+                    android:layout_marginBottom="8dp"
+                    android:id="@+id/chip_group_search"
+                    android:layout_marginTop="@dimen/serial_vertical_margin"
+                    app:singleSelection="true"
+                    app:checkedChip="@+id/chip_ranking"
+                    app:chipSpacing="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <com.google.android.material.chip.Chip
+                        app:chipBackgroundColor="@color/colorAccent"
+                        android:textStyle="bold"
+                        android:text="Rating"
+                        tools:elevation="5dp"
+                        app:chipEndPadding="15dp"
+                        app:chipStartPadding="15dp"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:id="@+id/chip_ranking"
+                        app:chipIconTint="@android:color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                />
+                <com.google.android.material.chip.Chip
+                        android:text="Trending"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:checked="false"
+                        app:chipEndPadding="15dp"
+                        app:chipStartPadding="15dp"
+                        android:id="@+id/chip_trending"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_margin="@dimen/page_space"
+                    android:layout_marginTop="@dimen/serial_vertical_margin"
+                    android:hint="Type to Search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:imeOptions="actionSearch"
+                        android:maxLines="1"
+                        android:theme="@style/MyEditText"
+                        android:id="@+id/search_text_input"
+                        android:inputType="text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

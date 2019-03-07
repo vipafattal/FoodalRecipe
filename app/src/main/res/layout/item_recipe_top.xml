@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_margin="8dp"
+        android:layout_width="@dimen/top_recipe_height"
+        android:layout_height="220dp">
+    <com.github.florent37.shapeofview.shapes.RoundRectView
+            android:id="@+id/parentTopRecipeCard"
+            app:shape_roundRect_topRightRadius="@dimen/corner_radius_big"
+            app:shape_roundRect_bottomRightRadius="@dimen/corner_radius_big"
+            app:shape_roundRect_topLeftRadius="@dimen/corner_radius_big"
+            app:shape_roundRect_bottomLeftRadius="@dimen/corner_radius_big"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:elevation="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" tools:targetApi="lollipop">
+
+        <ImageView
+                android:id="@+id/top_recipe_img"
+                android:src="@drawable/tools_coffee_img"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+    </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+    <com.github.florent37.shapeofview.shapes.RoundRectView
+            android:layout_width="match_parent"
+            app:shape_roundRect_topRightRadius="20dp"
+            app:shape_roundRect_bottomLeftRadius="20dp"
+            android:layout_height="90dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/parentTopRecipeCard"
+            app:layout_constraintTop_toBottomOf="@+id/parentTopRecipeCard"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:elevation="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            tools:targetApi="lollipop">
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+            <FrameLayout
+                    android:layout_weight="1"
+                    android:padding="4dp"
+                    android:layout_marginStart="1.8dp"
+                    android:layout_marginEnd="1.8dp"
+                    android:background="#E600A9B2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginRight="1.8dp">
+                <TextView
+                        android:textColor="#fff"
+                        android:text="@string/app_name"
+                        android:id="@+id/top_recipe_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                />
+            </FrameLayout>
+            <LinearLayout
+                    android:padding="4dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                <LinearLayout
+                        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:paddingLeft="10dp">
+
+                    <TextView
+                            android:id="@+id/trendingRecipeRate"
+                            android:layout_marginEnd="5dp"
+                            android:textColor="#000000"
+                            android:text="5.4"
+                            android:textSize="15sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:layout_marginRight="5dp"/>
+                    <ImageView
+
+                            app:srcCompat="@drawable/ic_star"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:tint="#000"
+                    />
+                </LinearLayout>
+                <Space android:layout_width="0dp" android:layout_height="1dp"
+                       android:layout_weight="1"/>
+                <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/topRecipeFavAnim"
+                        android:layout_width="60dp"
+                        android:scaleX="1.2"
+                        android:scaleY="1.2"
+                        tools:background="@color/colorAccent"
+                        app:lottie_rawRes="@raw/heart"
+                        android:layout_height="match_parent"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.github.florent37.shapeofview.shapes.RoundRectView>
+</androidx.constraintlayout.widget.ConstraintLayout>
