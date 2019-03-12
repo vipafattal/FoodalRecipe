@@ -1,16 +1,27 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorAccent">@color/colorAccent</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorSecondary">@color/colorPrimaryDark</item>
-        <item name="android:textColorSecondary">#D50000</item>
-        <item name="android:textColorPrimary">#000000</item>
+        <item name="colorOnBackground">#D9FFFFFF</item>
+        <item name="colorOnSecondary">#F3F0F0</item>
+        <item name="colorOnPrimary">#fff</item>
+        <item name="colorSecondaryBackground">#f5ffffff</item>
     </style>
+   
+    <style name="AppTheme.Dark">
+        <item name="colorOnSecondary">#101112</item>
+        <item name="colorOnPrimary">#1C1C1C</item>
+        <item name="android:textColorPrimary">#fff</item>
+        <item name="android:textColorSecondary">#ABA5A5</item>
+        <item name="colorOnBackground">#E6121314</item>
+        <item name="colorSecondaryBackground">#F2121314</item>
+        <item name="android:windowBackground">@color/color_background_dark</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">#E6121314</item>
 
+    </style>
 
     <style name="Title">
         <item name="android:textSize">@dimen/font_title</item>
@@ -18,27 +29,28 @@
         <item name="android:textColor">?android:textColorPrimary</item>
     </style>
 
-    <style name="DetailsTitle" parent="Base.TextAppearance.AppCompat.Title">
-        <item name="android:textSize">@dimen/font_normal</item>
+    <style name="Details" parent="TextAppearance.AppCompat.Body2">
+        <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="DetailsBold" parent="Base.TextAppearance.AppCompat.Body1">
+    <style name="Details.DetailsBold" >
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="DetailsBold.Large">
-        <item name="android:textSize">@dimen/font_normal</item>
+    <style name="Details.small">
+        <item name="android:textSize">14sp</item>
     </style>
+
+    <style name="Details.normal">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Details.Large">
+        <item name="android:textSize">21.5sp</item>
+    </style>
+
 
     <style name="Secondary" parent="Theme.MaterialComponents.Light"/>
-
-    <style name="Secondary.Negative">
-        <item name="colorSecondary">#ff4d6a</item>
-    </style>
-
-    <style name="Secondary.Positive">
-        <item name="colorSecondary">@color/colorAccent</item>
-    </style>
 
     <style name="Widget.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:textColor">?android:textColorPrimary</item>
@@ -47,7 +59,7 @@
 
 
     <style name="MyEditText">
-        <item name="colorControlNormal">#000000</item>
-
+        <item name="colorControlNormal">@android:color/transparent</item>
     </style>
+
 </resources>

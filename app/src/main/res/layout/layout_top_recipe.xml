@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#F3F0F0"
+        android:background="?colorOnSecondary"
         android:orientation="vertical"
         app:shape_arc_height="60dp"
         app:shape_arc_position="bottom"
@@ -14,12 +14,13 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-    <TextView
-            android:layout_gravity="center_vertical"
-            android:text="@string/trending"
-            android:layout_margin="10dp"
-            android:layout_width="wrap_content"
-              android:layout_height="wrap_content"/>
+        <TextView
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_gravity="center_vertical"
+                android:text="@string/trending"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         <Space
                 android:layout_weight="1"
                 android:layout_width="0dp"
@@ -27,6 +28,7 @@
         />
         <com.google.android.material.button.MaterialButton
                 android:textAllCaps="false"
+                android:id="@+id/see_all_trending"
                 android:text="See All"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_marginEnd="10dp"
@@ -43,9 +45,11 @@
 
         <LinearLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_marginStart="10dp"
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp">
             <include
                     android:id="@+id/topRecipe1"
                     layout="@layout/item_recipe_top"/>

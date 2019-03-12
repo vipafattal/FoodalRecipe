@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:title="Appearance">
+        <CheckBoxPreference
+                android:defaultValue="false"
+                android:title="Dark Mode"
+                android:key="@string/dark_theme"
+        />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="Offline Support &amp; Data">
+        <CheckBoxPreference
+                android:title="Save Loaded Data"
+                android:summary="Browser recipe without internet by saving recipe data when using in connection with internet"
+                android:key="@string/save_offline"
+                android:defaultValue="true"/>
+
+        <CheckBoxPreference
+                android:title="Cache Loaded Image"
+                android:summary="This with cache loaded image which will save your bandwidth and shows you image if possible in offline mode"
+                android:key="@string/cache_images"
+                android:defaultValue="true"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="Search">
+        <SwitchPreference
+                android:key="@string/store_search_result"
+                android:title="Store Search Result"
+                android:summary="Save the search result for offline browsing"
+                android:defaultValue="false"/>
+
+        <SwitchPreference
+                android:key="@string/search_offline"
+                android:title="Search Offline"
+                android:summary="when you search without internet this will enable searching in the saved data"
+                android:defaultValue="true"/>
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+            android:title="Clear Data ">
+        <Preference
+                android:key="@string/erase_database"
+                android:summary="Deletes all saved recipes except the favorite one's"
+                android:title="Clear Saved Data"/>
+        <Preference
+                android:key="@string/erase_images_cache"
+                android:title="Clear Cached Images"
+                android:summary="Deletes all cached images only"/>
+
+
+        <Preference
+                android:summary=""
+                android:title=""/>
+        <Preference
+                android:summary=""
+                android:title=""/>
+        <PreferenceCategory
+                android:summary=""
+                android:title=""/>
+        <PreferenceCategory
+                android:summary=""
+                android:title=""/>
+        <PreferenceCategory
+                android:summary=""
+                android:title=""/>
+    </PreferenceCategory>
+</PreferenceScreen>

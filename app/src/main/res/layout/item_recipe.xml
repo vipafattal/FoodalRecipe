@@ -7,7 +7,8 @@
         android:foreground="?attr/selectableItemBackground"
         android:clipChildren="true"
         android:clickable="true"
-        android:focusable="true" android:longClickable="true"
+        android:focusable="true"
+        android:longClickable="true"
         android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:elevation="3dp"
@@ -17,12 +18,12 @@
         tools:targetApi="lollipop">
 
     <ImageView
-            android:background="#fff"
             android:id="@+id/recipeImg"
             android:scaleType="centerCrop"
             android:src="@drawable/tools_coffee_img"
             android:layout_width="match_parent"
-            android:layout_height="225dp"/>
+            android:layout_height="225dp"
+            tools:ignore="ContentDescription"/>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -31,11 +32,13 @@
                 android:id="@+id/recipeRateParent"
                 android:layout_width="50dp"
                 app:cardElevation="4dp"
+                app:cardBackgroundColor="?colorOnPrimary"
                 app:cardCornerRadius="25dp"
                 android:layout_height="50dp"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
-                app:layout_constraintTop_toTopOf="@+id/relativeLayout" app:layout_constraintVertical_bias="0.447"
+                app:layout_constraintTop_toTopOf="@+id/relativeLayout"
+                app:layout_constraintVertical_bias="0.447"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp">
@@ -66,19 +69,21 @@
 
 
         <LinearLayout
-                android:padding="5dp"
+                android:minHeight="50dp"
+                android:padding="6dp"
                 android:layout_gravity="bottom"
-                android:background="#D9FFFFFF"
+                android:background="?colorOnBackground"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:id="@+id/relativeLayout">
             <TextView
                     android:layout_weight="1"
                     android:textSize="17sp"
-                    tools:text="some recipe \n namd"
+                    tools:text="some recipe "
                     android:id="@+id/recipeTitle"
-                    android:layout_width="wrap_content"
+                    android:textColor="?android:textColorPrimary"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
             <Space
                     android:layout_gravity="end"
@@ -87,35 +92,18 @@
                     android:layout_height="30dp"/>
         </LinearLayout>
 
-        <LinearLayout
-                android:layout_width="wrap_content"
+        <include
+
                 android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                layout="@layout/layout_rate"
                 app:layout_constraintEnd_toEndOf="@+id/recipeRateParent"
-                android:layout_marginEnd="4dp"
-                android:layout_marginRight="4dp"
-                android:layout_marginBottom="3dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/recipeRateParent"
                 app:layout_constraintStart_toStartOf="@+id/recipeRateParent"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp">
-            <TextView
-                    android:id="@+id/recipeRate"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
-                    android:text="5.4"
-                    android:textSize="15sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            <ImageView
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:tint="@color/colorAccent"
-                    app:srcCompat="@drawable/ic_star"
-            />
-        </LinearLayout>
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp" app:layout_constraintVertical_bias="0.56"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.github.florent37.shapeofview.shapes.RoundRectView>

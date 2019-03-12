@@ -3,7 +3,7 @@
     <declare-styleable name="MagentaNav">
         <attr name="menuRes" format="integer" />
         <attr name="navColor" format="color" />
-        <attr name="defaultColorState" format="color" />
+        <attr name="defaultColor" format="color" />
 
         <attr name="accentDefault" format="color"/>
         <attr name="accentActiveColor" format="color"/>
@@ -22,5 +22,9 @@
         <attr name="scaleImg" format="float"/>
 
         <attr name="default_position" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="AppStyle">
+        <attr name="colorSecondaryBackground" format="color"/>
     </declare-styleable>
 </resources>

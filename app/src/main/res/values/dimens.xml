@@ -8,7 +8,7 @@
 
 
     <dimen name="font_normal">16sp</dimen>
-    <dimen name="font_title">26sp</dimen>
+    <dimen name="font_title">23sp</dimen>
 
     <dimen name="space_tiny">4dp</dimen>
     <dimen name="space_small">8dp</dimen>
@@ -31,5 +31,6 @@
     <dimen name="serial_vertical_margin">10dp</dimen>
     <dimen name="page_space">8dp</dimen>
     <dimen name="display">17sp</dimen>
+    <dimen name="details_img_height">220dp</dimen>
 
 </resources>

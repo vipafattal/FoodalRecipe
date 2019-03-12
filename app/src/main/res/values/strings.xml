@@ -10,5 +10,15 @@
     <string name="favorite">Favorite</string>
     <string name="settings">Settings</string>
     <string name="trending">Trending</string>
+    <string name="save_offline">offline_support</string>
+    <string name="cache_images">cache_images</string>
+    <string name="search_offline">offline_search</string>
+    <string name="store_search_result">store_search_result</string>
+    <string name="erase_database">clear_data_base</string>
+    <string name="erase_images_cache">clear_glide_cache</string>
+    <string name="dark_theme">dark_theme</string>
+    <string name="rank">Rank</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="preparations_amp_publisher"><![CDATA[Preparations & Publisher]]></string>
 
 </resources>

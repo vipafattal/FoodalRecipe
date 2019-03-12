@@ -1,22 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-             tools:context=".ui.HomeFragment">
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.HomeFragment">
 
+    <androidx.cardview.widget.CardView
+            app:cardBackgroundColor="?android:windowBackground"
+            tools:visibility="visible"
+            android:visibility="gone"
+            android:id="@+id/trending_title"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_gravity="center_vertical"
+                android:text="@string/trending"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/homeRV"
-            android:scrollbars="vertical"
-            app:fastScrollEnabled="true"
             tools:listitem="@layout/item_recipe"
             android:clipToPadding="false"
             android:paddingBottom="@dimen/magenta_nav_height"
-            app:fastScrollHorizontalThumbDrawable="@drawable/thumb_drawable"
-            app:fastScrollHorizontalTrackDrawable="@drawable/line_drawable"
-            app:fastScrollVerticalThumbDrawable="@drawable/thumb_drawable"
-            app:fastScrollVerticalTrackDrawable="@drawable/line_drawable"
-            app:layoutManager="LinearLayoutManager"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layoutAnimation="@anim/layout_animation_fall_down"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-</FrameLayout>
+</LinearLayout>
+

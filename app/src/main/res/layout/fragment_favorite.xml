@@ -4,21 +4,15 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              xmlns:app="http://schemas.android.com/apk/res-auto"
-             tools:context=".ui.FavoriteFragment">
+             tools:context=".ui.fragment.FavoriteFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/favoriteRV"
-            android:scrollbars="vertical"
-            app:fastScrollEnabled="true"
             tools:listitem="@layout/item_recipe"
             android:clipToPadding="false"
             android:paddingBottom="@dimen/magenta_nav_height"
-            app:fastScrollHorizontalThumbDrawable="@drawable/thumb_drawable"
-            app:fastScrollHorizontalTrackDrawable="@drawable/line_drawable"
-            app:fastScrollVerticalThumbDrawable="@drawable/thumb_drawable"
-            app:fastScrollVerticalTrackDrawable="@drawable/line_drawable"
-            app:layoutManager="LinearLayoutManager"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layoutAnimation="@anim/layout_animation_fall_down"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 

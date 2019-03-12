@@ -2,14 +2,14 @@ package com.magenta.foodalrecipe.utils.commen
 
 import android.content.Context
 import androidx.core.content.ContextCompat
-import com.magenta.foodalrecipe.utils.AppContext
+import com.magenta.foodalrecipe.utils.AppMainContext
 
 
-fun Colour(colorID: Int, context: Context = AppContext.appMainContext): Int = ContextCompat.getColor(context, colorID)
+fun Colour(colorID: Int, context: Context = AppMainContext.appMainContext): Int = ContextCompat.getColor(context, colorID)
 
-fun Stringer(stringID: Int, mContext: Context = AppContext.appMainContext) = mContext.resources.getString(stringID)
+fun Stringer(stringID: Int, mContext: Context = AppMainContext.appMainContext) = mContext.resources.getString(stringID)
 
-fun Image(drawableImg: Int, context: Context = AppContext.appMainContext) =
+fun Image(drawableImg: Int, context: Context = AppMainContext.appMainContext) =
     ContextCompat.getDrawable(context, drawableImg)
 
 /**

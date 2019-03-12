@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/search_rootView"
-        tools:context=".ui.SearchFragment">
+        tools:context=".ui.fragment.SearchFragment">
     <RelativeLayout
 
             android:layout_width="match_parent"
@@ -15,24 +15,19 @@
                 android:clipToPadding="false"
                 android:paddingBottom="70dp"
                 android:id="@+id/searchRV"
-                android:scrollbars="vertical"
-                app:fastScrollEnabled="true"
                 tools:listitem="@layout/item_recipe"
-                app:fastScrollHorizontalThumbDrawable="@drawable/thumb_drawable"
-                app:fastScrollHorizontalTrackDrawable="@drawable/line_drawable"
-                app:fastScrollVerticalThumbDrawable="@drawable/thumb_drawable"
-                app:fastScrollVerticalTrackDrawable="@drawable/line_drawable"
-                app:layoutManager="LinearLayoutManager"
-                android:layout_width="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layoutAnimation="@anim/layout_animation_fall_down"                android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
         <include layout="@layout/layout_loading_animation"/>
         <View
                 android:visibility="invisible"
-                android:background="#40000000"
+                android:background="#66000000"
                 android:id="@+id/touch_outside"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
     </RelativeLayout>
+
     <include layout="@layout/bottom_search_bar"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

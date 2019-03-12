@@ -19,6 +19,7 @@ buildscript {
         magentaNav_version = "v0.1.1"
         shpapeView_version = "1.4.7"
         lottie_version = "3.0.0-beta1"
+        dagger_version = "2.5"
     }
 
     repositories {

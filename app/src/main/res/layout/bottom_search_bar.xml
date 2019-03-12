@@ -3,14 +3,15 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        app:behavior_peekHeight="48dp"
+        app:behavior_peekHeight="44dp"
         android:paddingBottom="15dp"
+        app:cardBackgroundColor="?colorOnPrimary"
         app:cardElevation="@dimen/card_elevation"
         app:layout_behavior="@string/bottom_sheet_behavior"
         android:id="@+id/bottom_sheet_search"
         android:background="@drawable/corners"
         android:layout_height="wrap_content"
-        tools:context=".ui.SearchFragment"
+        tools:context=".ui.fragment.SearchFragment"
         android:orientation="vertical"
         android:layout_width="match_parent">
 
@@ -19,11 +20,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        <View
-                android:background="@android:color/darker_gray"
-                android:layout_width="match_parent"
-                android:layout_height=".85dp"
-        />
+
         <LinearLayout
                 android:padding="@dimen/page_space"
                 android:id="@+id/peek_view_bottom_search"
@@ -67,6 +64,7 @@
 
 
             <TextView
+                    android:textColor="?android:textColorPrimary"
                     android:layout_marginLeft="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="15dp"
@@ -89,6 +87,7 @@
                     android:layout_height="wrap_content">
 
                 <com.google.android.material.chip.Chip
+                        android:textColor="?android:textColorPrimary"
                         app:chipBackgroundColor="@color/colorAccent"
                         android:textStyle="bold"
                         android:text="Rating"
@@ -102,8 +101,10 @@
                         android:layout_height="wrap_content"
                 />
                 <com.google.android.material.chip.Chip
+                        android:textColor="?android:textColorPrimary"
                         android:text="Trending"
                         style="@style/Widget.MaterialComponents.Chip.Filter"
+                        app:chipBackgroundColor="@color/disabled"
                         android:checked="false"
                         app:chipEndPadding="15dp"
                         app:chipStartPadding="15dp"
@@ -116,12 +117,17 @@
                     android:layout_margin="@dimen/page_space"
                     android:layout_marginTop="@dimen/serial_vertical_margin"
                     android:hint="Type to Search"
+                    app:boxBackgroundColor="?colorOnSecondary"
+                    tools:boxBackgroundColor="#E6121314"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Caption"
                     android:layout_width="match_parent"
+                    android:textColorHint="?android:textColorSecondary"
                     android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
                         android:imeOptions="actionSearch"
                         android:maxLines="1"
+                        android:textColor="?android:textColorPrimary"
                         android:theme="@style/MyEditText"
                         android:id="@+id/search_text_input"
                         android:inputType="text"

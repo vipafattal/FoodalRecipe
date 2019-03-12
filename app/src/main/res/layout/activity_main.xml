@@ -26,26 +26,28 @@
               app:layout_constraintTop_toTopOf="parent"/>
 
 
-    <com.magenta.foodalrecipe.utils.customViews.MagentaNav
+    <com.magenta.foodalrecipe.utils.magentaNavigation.MagentaNav
             android:clickable="true"
             android:elevation="8dp"
             android:layout_alignParentBottom="true"
-            android:background="#EBFFFFFF"
+            android:background="?colorSecondaryBackground"
             android:id="@+id/magentaNav"
             android:layout_width="match_parent"
             android:layout_height="@dimen/magenta_nav_height"
-            app:itemHeight="110dp"
-            app:itemWidth="65dp"
+            app:itemHeight="104dp"
+            app:itemWidth="62dp"
+            app:defaultColor="?colorOnPrimary"
+            app:accentActiveColor="?colorOnPrimary"
             app:menuRes="@menu/main_menu"
-            app:navElevation="7dp"
+            app:navElevation="1.5dp"
             app:navRadius="10dp"
-            app:onClickItemElevation="10dp"
+            app:onClickItemElevation="6dp"
             app:scaleImg="1.4"
-            app:text_size="18sp"
+            app:text_size="16sp"
             tools:targetApi="lollipop"
             android:focusable="true"
             app:navColor="@color/colorAccent"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-    />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
