@@ -8,6 +8,7 @@ import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
 /**
@@ -75,6 +76,9 @@ suspend inline fun ingredientRepos(
                 errorMessage = response.errorBody()?.toString() ?: "Unknown error"
         } catch (hostException: UnknownHostException) {
             errorMessage = hostException.message
+        } catch (time: SocketTimeoutException) {
+            errorMessage = time.message
+
         }
     }
 

@@ -88,7 +88,7 @@
 
                 <com.google.android.material.chip.Chip
                         android:textColor="?android:textColorPrimary"
-                        app:chipBackgroundColor="@color/colorAccent"
+                        app:chipBackgroundColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
                         android:text="Rating"
                         tools:elevation="5dp"

@@ -17,7 +17,7 @@
         <item name="android:textColorPrimary">#fff</item>
         <item name="android:textColorSecondary">#ABA5A5</item>
         <item name="colorOnBackground">#E6121314</item>
-        <item name="colorSecondaryBackground">#F2121314</item>
+        <item name="colorSecondaryBackground">#F7121314</item>
         <item name="android:windowBackground">@color/color_background_dark</item>
         <item name="android:navigationBarColor" tools:targetApi="lollipop">#E6121314</item>
 

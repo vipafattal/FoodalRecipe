@@ -14,7 +14,7 @@ const val DbName = "Recipes_DB"
 //b8b8d02b02f026f3cd60a9040d5ab3a8
 //d9c56d41164308c7c9191a6e09defc7c
 //806cbcc92f09749b9b474bb3cc4f3081
-const val Food2Fork = "d826883867d8c7188d6b1a7881214860"
+const val Food2Fork = "b8b8d02b02f026f3cd60a9040d5ab3a8"
 const val BaseUrl = "https://www.food2fork.com/api/"
 
 
