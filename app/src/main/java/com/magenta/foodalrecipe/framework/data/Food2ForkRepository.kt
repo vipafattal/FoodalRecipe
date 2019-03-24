@@ -1,6 +1,7 @@
 package com.magenta.foodalrecipe.framework.data
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.magenta.foodalrecipe.framework.data.PagedData.RecipePagedDataSourceBuilder
@@ -16,11 +17,16 @@ class Food2ForkRepository(
     private val service: Food2ForkAPI,
     private val cache: Food2ForkLocalCache
 ) {
-    private val pageSize= 15
+    private val pageSize = 15
     //Invoked once every new query
+    private lateinit var food2ForkResponse: MutableLiveData<Food2ForkResponse>
+
+    fun initNewResponse() {
+        food2ForkResponse = MutableLiveData()
+    }
+
     fun food2ForkResponse(query: String, sortType: Char = 'r'): Food2ForkResponse {
-
-
+        initNewResponse()
         // Get data from the local cache
         val dataSourceFactory = cache.getRecipes(query, sortType)
 
@@ -40,7 +46,7 @@ class Food2ForkRepository(
     }
 
     fun food2ForkPagedResponse(query: String, sortType: Char = 'r'): Food2ForkResponse {
-        val dataSourceFactory = RecipePagedDataSourceBuilder(service,cache, query, sortType)
+        val dataSourceFactory = RecipePagedDataSourceBuilder(service, cache, query, sortType)
         val config: PagedList.Config = PagedList.Config.Builder()
             .setEnablePlaceholders(false)
             .setPageSize(pageSize)
@@ -48,7 +54,7 @@ class Food2ForkRepository(
 
         val data: LiveData<PagedList<Recipe>> = LivePagedListBuilder(dataSourceFactory, config).build()
 
-        return Food2ForkResponse(data,dataSourceFactory.networkErrors)
+        return Food2ForkResponse(data, dataSourceFactory.networkErrors)
     }
 
 
@@ -65,7 +71,7 @@ class Food2ForkRepository(
     }
 
 
-    fun getFavoritedList(isFavorited:Boolean) :MutableList<Recipe> = cache.getFavourtedList(isFavorited)
+    fun getFavoritedList(isFavorited: Boolean): MutableList<Recipe> = cache.getFavourtedList(isFavorited)
 
 
 }

@@ -1,5 +1,6 @@
 package com.magenta.foodalrecipe.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders
 import androidx.preference.Preference
@@ -41,7 +42,7 @@ class SettingsFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChan
     private val job = SupervisorJob()
     private val coroutineScope: CoroutineScope = CoroutineScope(Dispatchers.IO + job)
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        setPreferencesFromResource(R.xml.app_preferences, rootKey)
+        setPreferencesFromResource(com.magenta.foodalrecipe.R.xml.app_preferences, rootKey)
         val viewModel = ViewModelProviders.of(
             this,
             Injection.provideViewModelFactory()
@@ -51,6 +52,9 @@ class SettingsFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChan
 
         onPreferencesClick(R.string.erase_database, "Saved Data Cleared") {
             viewModel.deleteByFavoriteState(false)
+            val i = context?.packageManager!!.getLaunchIntentForPackage(context!!.packageName)
+            i?.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(i)
         }
 
         onPreferencesClick(R.string.erase_images_cache, "Images Cache Cleared", coroutineScope) {

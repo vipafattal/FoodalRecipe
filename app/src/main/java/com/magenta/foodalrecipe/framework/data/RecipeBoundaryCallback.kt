@@ -15,8 +15,7 @@ class RecipeBoundaryCallback(
     private val query: String,
     private val sortType: Char,
     private val service: Food2ForkAPI,
-    private val cache: Food2ForkLocalCache
-) : PagedList.BoundaryCallback<Recipe>() {
+    private val cache: Food2ForkLocalCache) : PagedList.BoundaryCallback<Recipe>() {
 
     // keep the last requested page. When the request is successful, increment the page number.
     private var lastRequestedPage = 1
@@ -54,7 +53,6 @@ class RecipeBoundaryCallback(
             , { recipes ->
                 cache.insert(recipes) { isNextPage ->
                     isRequestInProgress = false
-
                     if (isNextPage)
                         requestAndSaveData()
                 }

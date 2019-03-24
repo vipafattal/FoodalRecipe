@@ -40,8 +40,8 @@ class RecipeRepositoriesViewModel(private val repository: Food2ForkRepository) :
         it.networkErrors
     }
 
-
     fun updateRecipe(newRecipe: Recipe) {
+
         repository.updateRecipe(newRecipe)
     }
 

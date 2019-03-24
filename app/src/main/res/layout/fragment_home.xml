@@ -27,6 +27,7 @@
     </androidx.cardview.widget.CardView>
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/homeRV"
+            android:scrollbars="vertical"
             tools:listitem="@layout/item_recipe"
             android:clipToPadding="false"
             android:paddingBottom="@dimen/magenta_nav_height"

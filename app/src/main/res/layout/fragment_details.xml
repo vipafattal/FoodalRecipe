@@ -147,9 +147,10 @@
         <androidx.recyclerview.widget.RecyclerView
                 android:layout_marginTop="5dp"
                 android:overScrollMode="never"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
                 android:id="@+id/recycler_ingredients"
                 tools:listitem="@layout/item_details"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 tools:itemCount="7"
                 android:minHeight="100dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

@@ -1,14 +1,16 @@
 package com.magenta.foodalrecipe.framework.data.api
 
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.magenta.foodalrecipe.model.IngredientResponse
 import com.magenta.foodalrecipe.model.Recipe
 import com.magenta.foodalrecipe.utils.commen.BaseUrl
 import com.magenta.foodalrecipe.utils.commen.Food2Fork
+import kotlinx.coroutines.Deferred
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -34,7 +36,7 @@ interface Food2ForkAPI {
     fun getIngredients(
         @Query("key") key: String = Food2Fork,
         @Query("rId") rId: String
-    ): Call<IngredientResponse>
+    ): Deferred<Response<IngredientResponse>>
 
 
     companion object {
@@ -50,8 +52,8 @@ interface Food2ForkAPI {
             Retrofit.Builder()
                 .baseUrl(BaseUrl)
                 .client(client)
+                .addCallAdapterFactory(CoroutineCallAdapterFactory())
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
 
         }

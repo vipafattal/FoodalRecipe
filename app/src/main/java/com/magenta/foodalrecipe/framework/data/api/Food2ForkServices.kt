@@ -62,11 +62,10 @@ suspend inline fun ingredientRepos(
     var ingredient: List<String>? = listOf()
     var errorMessage: String? = null
 
-
     withContext(Dispatchers.IO) {
         try {
             val food2ForkAPI = Food2ForkAPI.create()
-            val response = food2ForkAPI.getIngredients(rId = recipeId).execute()
+            val response = food2ForkAPI.getIngredients(rId = recipeId).await()
 
             if (response.isSuccessful) {
                 ingredient = response.body()?.recipe?.ingredients
@@ -78,7 +77,6 @@ suspend inline fun ingredientRepos(
             errorMessage = hostException.message
         } catch (time: SocketTimeoutException) {
             errorMessage = time.message
-
         }
     }
 

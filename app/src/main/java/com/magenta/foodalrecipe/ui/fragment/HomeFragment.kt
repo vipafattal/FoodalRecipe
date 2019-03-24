@@ -35,7 +35,6 @@ class HomeFragment : BaseFragment(), onBackPressedFragment {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
         if (isShowingTrending) {
             trending_title.visibility = View.VISIBLE
             cardElevation = resources.getDimension(R.dimen.toolbar_elevation)

@@ -15,6 +15,7 @@
                 android:clipToPadding="false"
                 android:paddingBottom="70dp"
                 android:id="@+id/searchRV"
+                android:scrollbars="vertical"
                 tools:listitem="@layout/item_recipe"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:layoutAnimation="@anim/layout_animation_fall_down"                android:layout_width="match_parent"

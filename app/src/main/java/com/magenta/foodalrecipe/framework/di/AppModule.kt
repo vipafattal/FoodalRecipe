@@ -7,7 +7,7 @@ package com.magenta.foodalrecipe.framework.di
 
 /*
 @Module
-open class AppModule(val dao: RecipeDatabaseDao,val food2ForkAPI: Food2ForkAPI) {
+open class AppModule(val dao: RecipeDatabaseDao, val food2ForkAPI: Food2ForkAPI) {
 
     @Provides
     fun coroutineIO(): CoroutineScope = CoroutineScope(Dispatchers.IO)
@@ -25,4 +25,5 @@ open class AppModule(val dao: RecipeDatabaseDao,val food2ForkAPI: Food2ForkAPI) 
     fun provideViewModelFactory(): ViewModelProvider.Factory {
         return ViewModelFactory(provideFood2ForkRepo())
     }
-}*/
+}
+*/

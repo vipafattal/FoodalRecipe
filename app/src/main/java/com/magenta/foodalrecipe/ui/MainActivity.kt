@@ -56,9 +56,7 @@ class MainActivity : AppCompatActivity(), OnNavItemClicked {
             magentaNav.callOnClickNavigation(navigationViewModel.currentPosition())
             supportFragmentManager.findFragmentByTag(currentViewFragment.tag)
         }
-
     }
-
 
     fun updateCurrentFragment(fragment: Fragment, tag: String, addBackStackNull: Int = 0) {
         currentViewFragment = fragment
