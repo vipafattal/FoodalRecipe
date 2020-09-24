@@ -1,34 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/search_rootView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/search_rootView"
         tools:context=".ui.fragment.SearchFragment">
+
     <RelativeLayout
 
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
         <androidx.recyclerview.widget.RecyclerView
-                android:clipToPadding="false"
-                android:paddingBottom="70dp"
                 android:id="@+id/searchRV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:layoutAnimation="@anim/layout_animation_fall_down"
+                android:paddingBottom="70dp"
                 android:scrollbars="vertical"
-                tools:listitem="@layout/item_recipe"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:layoutAnimation="@anim/layout_animation_fall_down"                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-        <include layout="@layout/layout_loading_animation"/>
+                tools:listitem="@layout/item_recipe" />
+
+        <include layout="@layout/layout_loading_animation" />
+
         <View
-                android:visibility="invisible"
-                android:background="#66000000"
                 android:id="@+id/touch_outside"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:background="#66000000"
+                android:visibility="invisible" />
     </RelativeLayout>
 
-    <include layout="@layout/bottom_search_bar"/>
+    <include layout="@layout/bottom_search_bar" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

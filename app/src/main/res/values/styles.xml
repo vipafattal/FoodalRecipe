@@ -8,7 +8,7 @@
         <item name="colorOnBackground">#D9FFFFFF</item>
         <item name="colorOnSecondary">#F3F0F0</item>
         <item name="colorOnPrimary">#fff</item>
-        <item name="colorSecondaryBackground">#f5ffffff</item>
+        <item name="colorSecondaryBackground">#FAFFFFFF</item>
     </style>
    
     <style name="AppTheme.Dark">
@@ -17,7 +17,7 @@
         <item name="android:textColorPrimary">#fff</item>
         <item name="android:textColorSecondary">#ABA5A5</item>
         <item name="colorOnBackground">#E6121314</item>
-        <item name="colorSecondaryBackground">#F7121314</item>
+        <item name="colorSecondaryBackground">#FC121314</item>
         <item name="android:windowBackground">@color/color_background_dark</item>
         <item name="android:navigationBarColor" tools:targetApi="lollipop">#E6121314</item>
 

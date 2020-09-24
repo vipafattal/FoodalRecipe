@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.magenta.foodalrecipe.R
 import com.magenta.foodalrecipe.framework.Injection
 import com.magenta.foodalrecipe.ui.ViewModel.NavigationViewModel
@@ -78,10 +78,8 @@ class MainActivity : AppCompatActivity(), OnNavItemClicked {
         }
     }
 
-    private fun retrieveMainViewModel() = ViewModelProviders.of(
-        this,
-        Injection.provideViewModelFactory()
-    ).get(RecipeRepositoriesViewModel::class.java)
+    private fun retrieveMainViewModel() = ViewModelProvider(this,Injection.provideViewModelFactory()).get(RecipeRepositoriesViewModel::class.java)
+
 
     override fun onBackPressed() {
         (currentViewFragment as? onBackPressedFragment)?.onBackPressed()

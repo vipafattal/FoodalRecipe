@@ -34,14 +34,11 @@ inline fun LottieAnimationView.lottieAnimationControl(
     reverse: Boolean,
     crossinline blockOnEnd: unitFun
 ) {
-
-
     animatorBuilder(0f,1f,duration,reverse).apply {
         doOnEnd{
             blockOnEnd()
         }
     }.start()
-
 }
 
 fun LottieAnimationView.lottieAnimationControl(

@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.magenta.foodalrecipe.R
 import com.magenta.foodalrecipe.framework.Injection
@@ -41,7 +41,7 @@ class HomeFragment : BaseFragment(), onBackPressedFragment {
         }
 
         showNavigation()
-        viewModel = ViewModelProviders.of(
+        viewModel = ViewModelProvider(
             this,
             Injection.provideViewModelFactory()
         ).get(RecipeRepositoriesViewModel::class.java)

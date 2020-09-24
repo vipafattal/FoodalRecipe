@@ -5,7 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.magenta.foodalrecipe.R
 import com.magenta.foodalrecipe.framework.Injection
 import com.magenta.foodalrecipe.framework.data.api.ingredientRepos
@@ -76,7 +76,7 @@ class DetailsFragment : BaseFragment() {
 
     private fun initViewModel() {
         detailsViewModel = viewModelOf(DetailsViewModel::class.java)
-        recipeRepoViewModel = ViewModelProviders.of(
+        recipeRepoViewModel = ViewModelProvider(
             this,
             Injection.provideViewModelFactory()
         ).get(RecipeRepositoriesViewModel::class.java)

@@ -38,9 +38,8 @@ abstract class BaseFragment : Fragment() {
     }
 
     fun RecyclerView.scrollRegister() {
-        onScroll { dx, dy ->
+        onScroll { _, dy ->
             doOnScroll()
-
             if (dy > 0) navigationTranslation(outOfScreen = true)
             if (dy < 0) navigationTranslation(outOfScreen = false)
         }

@@ -11,7 +11,6 @@ import com.magenta.foodalrecipe.framework.data.Food2ForkRepository
 class ViewModelFactory(private val repository: Food2ForkRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(RecipeRepositoriesViewModel::class.java)) {
-            repository
             @Suppress("UNCHECKED_CAST")
             return RecipeRepositoriesViewModel(repository) as T
         }

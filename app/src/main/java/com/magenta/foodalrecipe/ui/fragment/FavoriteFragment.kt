@@ -3,7 +3,7 @@ package com.magenta.foodalrecipe.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.magenta.foodalrecipe.R
 import com.magenta.foodalrecipe.framework.Injection
 import com.magenta.foodalrecipe.ui.ViewModel.RecipeRepositoriesViewModel
@@ -22,7 +22,7 @@ class FavoriteFragment : BaseFragment() {
     private val coroutineScope = CoroutineScope(Dispatchers.Main + job)
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val mainViewModel = ViewModelProviders.of(
+        val mainViewModel = ViewModelProvider(
             this,
             Injection.provideViewModelFactory()
         ).get(RecipeRepositoriesViewModel::class.java)

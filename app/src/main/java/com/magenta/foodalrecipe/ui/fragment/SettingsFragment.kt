@@ -2,9 +2,11 @@ package com.magenta.foodalrecipe.ui.fragment
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
+import androidx.preference.CheckBoxPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.SwitchPreference
 import com.bumptech.glide.Glide
 import com.magenta.foodalrecipe.R
 import com.magenta.foodalrecipe.framework.Injection
@@ -42,8 +44,8 @@ class SettingsFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChan
     private val job = SupervisorJob()
     private val coroutineScope: CoroutineScope = CoroutineScope(Dispatchers.IO + job)
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        setPreferencesFromResource(com.magenta.foodalrecipe.R.xml.app_preferences, rootKey)
-        val viewModel = ViewModelProviders.of(
+        setPreferencesFromResource(R.xml.app_preferences, rootKey)
+        val viewModel = ViewModelProvider(
             this,
             Injection.provideViewModelFactory()
         ).get(RecipeRepositoriesViewModel::class.java)
@@ -52,13 +54,13 @@ class SettingsFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChan
 
         onPreferencesClick(R.string.erase_database, "Saved Data Cleared") {
             viewModel.deleteByFavoriteState(false)
-            val i = context?.packageManager!!.getLaunchIntentForPackage(context!!.packageName)
+            val i = context?.packageManager!!.getLaunchIntentForPackage(requireContext().packageName)
             i?.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(i)
         }
 
         onPreferencesClick(R.string.erase_images_cache, "Images Cache Cleared", coroutineScope) {
-            Glide.get(context!!).clearDiskCache()
+            Glide.get(requireContext()).clearDiskCache()
         }
 
     }
@@ -72,11 +74,11 @@ class SettingsFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChan
     }
 
     private fun initChangePreference() {
-        findPreference(getString(R.string.dark_theme)).onPreferenceChangeListener = this
-        findPreference(getString(R.string.save_offline)).onPreferenceChangeListener = this
-        findPreference(getString(R.string.cache_images)).onPreferenceChangeListener = this
-        findPreference(getString(R.string.search_offline)).onPreferenceChangeListener = this
-        findPreference(getString(R.string.store_search_result)).onPreferenceChangeListener = this
+        findPreference<CheckBoxPreference>(getString(R.string.dark_theme))!!.onPreferenceChangeListener = this
+        findPreference<CheckBoxPreference>(getString(R.string.save_offline))!!.onPreferenceChangeListener = this
+        findPreference<CheckBoxPreference>(getString(R.string.cache_images))!!.onPreferenceChangeListener = this
+        findPreference<SwitchPreference>(getString(R.string.search_offline))!!.onPreferenceChangeListener = this
+        findPreference<SwitchPreference>(getString(R.string.store_search_result))!!.onPreferenceChangeListener = this
     }
 
     companion object {

@@ -6,7 +6,7 @@ import android.view.View
 import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.magenta.foodalrecipe.R
 import com.magenta.foodalrecipe.framework.Injection
@@ -43,10 +43,12 @@ class SearchFragment : BaseFragment(), View.OnClickListener , onBackPressedFragm
         super.onActivityCreated(savedInstanceState)
         hideNavigation()
         activity?.window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
-        mainViewModel = ViewModelProviders.of(
+
+        mainViewModel = ViewModelProvider(
             this,
             Injection.provideViewModelFactory()
         ).get(RecipeRepositoriesViewModel::class.java)
+
         bottomSheetBehavior =
             BottomSheetBehavior.from(bottom_sheet_search)
 
@@ -122,7 +124,7 @@ class SearchFragment : BaseFragment(), View.OnClickListener , onBackPressedFragm
                     initRecyclerView()
                 }
             } else {
-                context!!.errorNotifier("Error occurred", it)
+                requireContext().errorNotifier("Error occurred", it)
                 currentState.postValue(R.drawable.ic_error)
             }
         }
@@ -156,7 +158,7 @@ class SearchFragment : BaseFragment(), View.OnClickListener , onBackPressedFragm
             }
         }
 
-        bottomSheetBehavior.setBottomSheetCallback(bottomSliderCallback)
+        bottomSheetBehavior.addBottomSheetCallback(bottomSliderCallback)
     }
 
     private fun showBottomBar() {
